@@ -25,9 +25,12 @@ function SideNav({ list }: SideNavProps) {
               // onSelect={onSelect}
               // onSearch={() =>{}}
               >
-                <Input.Search size="large" placeholder="input here" enterButton />
+                <Input.Search size="large" placeholder="" enterButton />
               </AutoComplete>
-            <div><LogoutDropdown /></div>
+            <div>
+              {/* <Badge></Badge> */}
+              <LogoutDropdown />
+            </div>
           </div>
         </Header>
         <Content style={{ margin: '1rem' }}>

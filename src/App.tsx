@@ -21,8 +21,8 @@ function getItem(label: String, key: String, icon?: any, children?: Array<any>):
 }
 
 const items: any[] = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
+  getItem('Dashboard', '1', <PieChartOutlined />),
+  getItem('Appointment', '2', <DesktopOutlined />),
   getItem('User', 'sub1', <UserOutlined />, [
     getItem('Tom', '3'),
     getItem('Bill', '4'),
@@ -33,7 +33,10 @@ const items: any[] = [
 ];
 
 const App = () => {
-  return (<SideNav list={ items } />);
+
+  return (
+    <SideNav list={ items } />
+  );
 };
 
 export default App;
