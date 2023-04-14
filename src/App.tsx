@@ -33,10 +33,7 @@ const items: any[] = [
 ];
 
 const App = () => {
-
-  return (
-    <SideNav list={ items } />
-  );
+  return (<SideNav list={ items } />);
 };
 
 export default App;
