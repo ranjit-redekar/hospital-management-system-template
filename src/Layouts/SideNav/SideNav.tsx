@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Routes, matchRoutes, useLocation, Route } from "react-router-dom"
 import { AutoComplete, Layout, Menu, Space, Input, Col, Row } from 'antd';
 import NavList from './NavList';
 import LogoutDropdown from '../../common/LogoutDropdown';
+import Dashboard from '../../views/Dashboard/Dashboard';
+import Appointment from '../../views/Appointment/Appointment';
 const { Search } = Input;
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -10,6 +13,8 @@ interface SideNavProps {
 }
 
 function SideNav({ list }: SideNavProps) {
+  let location = useLocation();
+  console.log(location, "location ======== ");
   return (
     <Layout
       style={{ minHeight: '100vh' }}
@@ -33,16 +38,11 @@ function SideNav({ list }: SideNavProps) {
             </div>
           </div>
         </Header>
-        <Content style={{ margin: '1rem' }}>
-          <div
-            className="site-layout-background"
-            style={{
-              padding: 24,
-              minHeight: 360,
-            }}
-          >
-            Bill is a cat.
-          </div>
+        <Content className="site-layout-background" style={{ margin: '1rem' }}>
+        <Routes>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="appointment" element={<Appointment />} />
+        </Routes>
         </Content>
         <Footer
           style={{
